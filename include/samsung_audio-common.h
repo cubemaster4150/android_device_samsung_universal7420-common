@@ -18,7 +18,7 @@
 #ifndef SAMSUNG_AUDIO_COMMON_H
 #define SAMSUNG_AUDIO_COMMON_H
 
-#include <zero-helpers.h>
+#include <universal7420-helpers.h>
 
 /*
  * Sound card specific defines.

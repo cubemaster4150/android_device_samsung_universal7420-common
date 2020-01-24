@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := resetprop.zero
+LOCAL_MODULE := resetprop.universal7420
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_SHARED_LIBRARIES := \
@@ -10,12 +10,12 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_STATIC_LIBRARIES := \
 	libprotobuf-c-nano \
-	libzerosystemproperties
+	libuniversal7420systemproperties
 
 LOCAL_C_INCLUDES := \
 	external/nanopb-c/ \
 	$(LOCAL_PATH)/include/ \
-	$(LOCAL_PATH)/libzerosystemproperties/include/
+	$(LOCAL_PATH)/libuniversal7420systemproperties/include/
 
 LOCAL_SRC_FILES := \
 	resetprop.c \
@@ -32,4 +32,4 @@ include $(BUILD_EXECUTABLE)
 ########################
 # Externals
 ########################
-include $(LOCAL_PATH)/libzerosystemproperties/Android.mk
+include $(LOCAL_PATH)/libuniversal7420systemproperties/Android.mk

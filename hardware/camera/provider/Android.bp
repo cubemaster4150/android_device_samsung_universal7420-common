@@ -1,5 +1,5 @@
 cc_library_shared {
-    name: "android.hardware.camera.provider@2.4-impl.zero",
+    name: "android.hardware.camera.provider@2.4-impl.universal7420",
     defaults: ["hidl_defaults"],
     proprietary: true,
     relative_install_path: "hw",

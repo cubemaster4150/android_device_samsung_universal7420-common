@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/universal7420-common
 
 BOARD_VENDOR := samsung
 
@@ -39,7 +39,6 @@ TARGET_NR_CPUS := 8
 TARGET_USES_64_BIT_BINDER := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -80,7 +79,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Camera
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_zero
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_universal7420
 
 
 # Camera-shims
@@ -121,7 +120,7 @@ BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 ## LineageOS HW
 JAVA_SOURCE_OVERLAYS := \
     org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
-    org.lineageos.hardware|device/samsung/zero-common/lineagehw|**/*.java
+    org.lineageos.hardware|device/samsung/universal7420-common/lineagehw|**/*.java
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := false
@@ -131,7 +130,7 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
 BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 
 # Releasetools - for resizing system filesystem
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/zero-common/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/universal7420-common/releasetools
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
@@ -157,7 +156,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 # Manifest
-DEVICE_MANIFEST_FILE += device/samsung/zero-common/manifest.xml
+DEVICE_MANIFEST_FILE += device/samsung/universal7420-common/manifest.xml
 
 #
 # Networking
@@ -224,7 +223,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
 
 # OpenMAX-shims
-zero_shims_omx += \
+universal7420_shims_omx += \
 	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/SHIM_TARGET.so \
 	/system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
 	/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/SHIM_TARGET.so \
@@ -248,11 +247,11 @@ zero_shims_omx += \
 
 # Shims: libstagefright
 TARGET_LD_SHIM_LIBS +=\
-    $(subst SHIM_TARGET,libstagefright_shim,$(zero_shims_omx))
+    $(subst SHIM_TARGET,libstagefright_shim,$(universal7420_shims_omx))
 
 # Shims: libui
 TARGET_LD_SHIM_LIBS +=\
-    $(subst SHIM_TARGET,libui_shim,$(zero_shims_omx))
+    $(subst SHIM_TARGET,libui_shim,$(universal7420_shims_omx))
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
@@ -263,14 +262,14 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 BOARD_USES_TRUST_KEYMASTER := true
 
 # Seccomp filters
-BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
+BOARD_SECCOMP_POLICY += device/samsung/universal7420-common/seccomp
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
 # TWRP
 ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
--include device/samsung/zero-common/twrp.mk
+-include device/samsung/universal7420-common/twrp.mk
 endif
 
 # WFD
@@ -291,7 +290,7 @@ WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
 
 # inherit from the proprietary version
--include vendor/samsung/zero-common/BoardConfigVendor.mk
+-include vendor/samsung/universal7420-common/BoardConfigVendor.mk
 
 # inherit from the private proprietary version
--include vendor/samsung/zero-private/BoardConfigVendor.mk
+-include vendor/samsung/universal7420-private/BoardConfigVendor.mk

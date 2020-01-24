@@ -13,23 +13,17 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/universal7420-common
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Common Overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/universal7420-common/overlay
 
 ifneq (,$(wildcard lineage-sdk/ ))
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += device/samsung/universal7420-common/overlay-lineage
 else
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-aosp
-endif
-
-ifneq ($(filter zerofltespr zeroltespr,$(TARGET_DEVICE)),)
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-cdma
-else
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-gsm
+DEVICE_PACKAGE_OVERLAYS += device/samsung/universal7420-common/overlay-aosp
 endif
 
 # This device is 640dpi.  However the platform doesn't
@@ -81,8 +75,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    device/samsung/zero-common/configs/permissions/com.samsung.permission.HRM_EXT.xml:system/etc/permissions/com.samsung.permission.HRM_EXT.xml \
-    device/samsung/zero-common/configs/permissions/com.samsung.permission.SSENSOR.xml:system/etc/permissions/com.samsung.permission.SSENSOR.xml
+    device/samsung/universal7420-common/configs/permissions/com.samsung.permission.HRM_EXT.xml:system/etc/permissions/com.samsung.permission.HRM_EXT.xml \
+    device/samsung/universal7420-common/configs/permissions/com.samsung.permission.SSENSOR.xml:system/etc/permissions/com.samsung.permission.SSENSOR.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -111,7 +105,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.exynos5 \
     libexynoscamera_shim \
-    android.hardware.camera.provider@2.4-impl.zero \
+    android.hardware.camera.provider@2.4-impl.universal7420 \
     android.hardware.camera.provider@2.4-service
 
 PRODUCT_COPY_FILES += \
@@ -133,7 +127,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    ZeroDoze
+    SamsungDoze
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -157,7 +151,7 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl.zero \
+    android.hardware.gnss@1.0-impl.universal7420 \
 	android.hardware.gnss@1.0-service
 
 # Graphics
@@ -213,7 +207,7 @@ PRODUCT_PACKAGES += \
 
 # Livedisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.zero
+    vendor.lineage.livedisplay@2.0-service.universal7420
 
 # Memory
 PRODUCT_PACKAGES += \
@@ -252,10 +246,10 @@ PRODUCT_PACKAGES += \
 # Power
 #
 PRODUCT_PACKAGES += \
-	android.hardware.power@1.0-service.zero
+	android.hardware.power@1.0-service.universal7420
 
 PRODUCT_COPY_FILES += \
-device/samsung/zero-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
+device/samsung/universal7420-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
 	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
@@ -284,7 +278,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
 
 # Properties 
-TARGET_SYSTEM_PROP += device/samsung/zero-common/system.prop
+TARGET_SYSTEM_PROP += device/samsung/universal7420-common/system.prop
     
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -350,7 +344,7 @@ PRODUCT_PACKAGES += \
 
 # Tools
 PRODUCT_PACKAGES += \
-	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
+	resetprop.universal7420   # Required for setting ro.*-properties for dual-SIM support
 
 ifneq (,$(wildcard lineage-sdk/ ))
 # Trust	
@@ -365,7 +359,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.zero
+    android.hardware.vibrator@1.0-service.universal7420
 
 
 # Wifi
@@ -393,10 +387,10 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
 # Get private non-open-source blobs
-$(call inherit-product-if-exists, vendor/samsung/zero-private/zero-private-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/universal7420-private/universal7420-private-vendor.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/universal7420-common/universal7420-common-vendor.mk)
 
 # include private blob configs
--include vendor/samsung/zero-private/config.mk
+-include vendor/samsung/universal7420-private/config.mk

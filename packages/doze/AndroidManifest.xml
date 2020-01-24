@@ -15,7 +15,7 @@
         android:targetSdkVersion="27"/>
 
     <application
-        android:label="ZeroDoze"
+        android:label="SamsungDoze"
         android:persistent="true">
 
         <receiver android:name="org.lineageos.settings.doze.BootCompletedReceiver">

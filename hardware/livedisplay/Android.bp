@@ -35,15 +35,15 @@ cc_defaults {
 }
 
 cc_binary {
-    name: "lineage.livedisplay@2.0-service.zero",
-    init_rc: ["lineage.livedisplay@2.0-service.zero.rc"],
+    name: "lineage.livedisplay@2.0-service.universal7420",
+    init_rc: ["lineage.livedisplay@2.0-service.universal7420.rc"],
     defaults: ["livedisplay_zero_defaults"],
     cflags: ["-DLIVES_IN_SYSTEM"],
 }
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.zero",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.zero.rc"],
+    name: "vendor.lineage.livedisplay@2.0-service.universal7420",
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.universal7420.rc"],
     defaults: ["livedisplay_zero_defaults"],
     vendor: true,
 }

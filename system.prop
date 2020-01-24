@@ -1,5 +1,5 @@
 ###
-# BEGIN zero-common device-properties
+# BEGIN universal7420-common device-properties
 #
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
@@ -135,5 +135,5 @@ wifi.direct.interface=p2p-dev-wlan0
 sys.usb.ffs.aio_compat=1
 
 #
-# END zero device-properties
+# END universal7420 device-properties
 ###
