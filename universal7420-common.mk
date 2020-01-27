@@ -245,11 +245,16 @@ PRODUCT_PACKAGES += \
 #
 # Power
 #
-PRODUCT_PACKAGES += \
-	android.hardware.power@1.0-service.universal7420
+#PRODUCT_PACKAGES += \
+#	android.hardware.power@1.0-service.universal7420
 
-PRODUCT_COPY_FILES += \
-device/samsung/universal7420-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
+#PRODUCT_COPY_FILES += \
+#device/samsung/universal7420-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
+
+PRODUCT_PACKAGES += \
+    power.universal7420 \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
 	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
