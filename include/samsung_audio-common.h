@@ -96,10 +96,10 @@
 /*
  * Runtime audience support detection
  */
-#define AUDIENCE_SUPPORTED  zero_audio_supports_audience
+#define AUDIENCE_SUPPORTED  universal7420_audio_supports_audience
 __maybe_unused
-static bool zero_audio_supports_audience() {
-	enum zero_model model = zero_model_read();
+static bool universal7420_audio_supports_audience() {
+	enum universal7420_model model = universal7420_model_read();
 	switch (model) {
 		case TMOBILE:
 		case CANADA:
@@ -112,9 +112,9 @@ static bool zero_audio_supports_audience() {
 /*
  * Runtime mixer paths file selection routine
  */
-#define MIXER_PATHS_FILE_ROUTINE  zero_audio_select_mixer_paths
+#define MIXER_PATHS_FILE_ROUTINE  universal7420_audio_select_mixer_paths
 __maybe_unused
-static bool zero_audio_select_mixer_paths(char *path) {
+static bool universal7420_audio_select_mixer_paths(char *path) {
 	if (AUDIENCE_SUPPORTED())
 		strcpy(path, "/vendor/etc/mixer_paths_%d-audience.xml");
 	else
